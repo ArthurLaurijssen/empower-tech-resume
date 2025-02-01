@@ -51,7 +51,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sora.variable}>{children}</body>
+      <body className={sora.variable}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+      </body>
     </html>
   );
 }
