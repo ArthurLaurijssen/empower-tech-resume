@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "border-gray": "rgba(230, 230, 230, 1)",
+        "text-gray": "#595959;",
       },
       backgroundImage: {
         "gradient-gray": "linear-gradient(180deg, #D7DFD4 0%, #CBCECA 100%)",

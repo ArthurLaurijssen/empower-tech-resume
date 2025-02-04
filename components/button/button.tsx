@@ -14,7 +14,7 @@ import { ButtonProps, ButtonIntent } from "./types";
  */
 const getButtonStyles = (intent: ButtonIntent): string => {
   // Base styles applied to all buttons
-  const baseStyles = "rounded-3xl p-2";
+  const baseStyles = "rounded-3xl px-4 py-2";
 
   // Specific styles for different button intents
   const styles = {
@@ -37,7 +37,6 @@ export const Button: React.FC<ButtonProps> = ({
       className={`${getButtonStyles(intent)} ${customClassNames}`}
       {...props}
     >
-      <div className=""></div>
       {children}
     </button>
   );
