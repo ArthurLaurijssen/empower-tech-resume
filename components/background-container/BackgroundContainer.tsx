@@ -8,10 +8,19 @@ export const BackgroundContainer: React.FC<BackgroundContainerProps> = ({
   children,
   intent,
   as = "div",
-}: BackgroundContainerProps) => {
+  className,
+  ...props
+}) => {
   const Element = as;
 
-  return <Element className={getBackgroundStyles(intent)}>{children}</Element>;
+  return (
+    <Element
+      className={`${getBackgroundStyles(intent)} ${className || ""}`}
+      {...props}
+    >
+      {children}
+    </Element>
+  );
 };
 
 const getBackgroundStyles = (intent: BackgroundIntent): string => {

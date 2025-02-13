@@ -1,5 +1,5 @@
 /**
- * Button Component
+ * GreetingContainer Component
  *
  * Provides a flexible, customizable button with various intent styles
  * Supports different visual variants while maintaining consistent base styling

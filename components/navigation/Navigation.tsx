@@ -2,7 +2,7 @@ import React from "react";
 import { navigationItems } from "@/components/navigation/types";
 import { NavigationItem } from "@/components/navigation/NavigationItem";
 import { NavigationLogo } from "@/components/navigation/NavigationLogo";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/button/Button";
 
 export const Navigation: React.FC = () => {
   return (

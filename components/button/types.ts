@@ -7,14 +7,14 @@ import React from "react";
 export type ButtonIntent = "white";
 
 /**
- * Properties for Button Component
+ * Properties for GreetingContainer Component
  *
  * Extends native button attributes with additional styling and content options
  */
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
-   * Button content to be rendered
+   * GreetingContainer content to be rendered
    */
   children: React.ReactNode;
 

@@ -1,9 +1,8 @@
-import React from "react";
+import { HTMLAttributes } from "react";
 
-export interface BackgroundContainerProps {
-  children: React.ReactNode;
+export interface BackgroundContainerProps extends HTMLAttributes<HTMLElement> {
   intent: BackgroundIntent;
-  as?: SemanticElement; // Default to 'div'
+  as?: SemanticElement;
 }
 
 export type BackgroundIntent = "gray" | "black" | "light_green" | "light_gray";
