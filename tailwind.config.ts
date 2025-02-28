@@ -11,16 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "border-gray": "rgba(230, 230, 230, 1)",
-        "text-gray": "#595959;",
+        "darker-gray": "#DADED7",
+        "text-gray": "#595959",
       },
       backgroundImage: {
-        "gradient-gray": "linear-gradient(180deg, #D7DFD4 0%, #CBCECA 100%)",
-        "gradient-gray-green":
-          "linear-gradient(180deg, rgba(215, 223, 212, 0.5) 0%, rgba(203, 206, 202, 0.5) 100%)",
+        "primary-gradient": "linear-gradient(to bottom, #eaefe8, #e5e7e5)",
       },
     },
   },
   plugins: [],
 } satisfies Config;
-//background: linear-gradient(180deg, rgba(215, 223, 212, 0.5) 0%, rgba(203, 206, 202, 0.5) 100%);
