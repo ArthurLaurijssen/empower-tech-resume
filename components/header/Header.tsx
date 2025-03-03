@@ -7,16 +7,24 @@ import { GreetingContainer } from "@/components/header/greeting-container/Greeti
 import { GradientEffect } from "@/components/shared/gradient-effect/GradientEffect";
 import { DiscussButton } from "@/components/header/discuss-button/DiscussButton";
 import { ExperienceContainer } from "@/components/header/experience-container/ExperienceContainer";
+import { UnionIcon } from "@/components/shared/icons/union-icon/UnionIcon";
+import { StarIcon } from "@/components/shared/icons/star-icon/StarIcon";
+import { LineIcon } from "@/components/shared/icons/line-icon/LineIcon";
+import { CircleIcon } from "@/components/shared/icons/circle-icon/CircleIcon";
 
 export const Header: React.FC<HeaderProps> = ({ developer }) => {
   return (
     <BackgroundContainer
       as="header"
       intent="primary_gray"
-      className="relative overflow-x-hidden"
+      className="relative overflow-x-hidden overflow-y-hidden"
     >
       {/* Navigation */}
       <Navigation className="m-6"> </Navigation>
+      <UnionIcon className="absolute  -left-10 -bottom-10 md:bottom-0 md:left-1 text-text-gray/30"></UnionIcon>
+      <StarIcon className="absolute top-28 -right-2 md:right-5 text-text-gray/20"></StarIcon>
+      <LineIcon className="absolute bottom-1/4 right-0 text-black/90"></LineIcon>
+      <CircleIcon className="absolute top-4 md:top-28 left-10 text-black/90"></CircleIcon>
       {/* Greeting container */}
       <GreetingContainer
         greeting={developer.greeting}
