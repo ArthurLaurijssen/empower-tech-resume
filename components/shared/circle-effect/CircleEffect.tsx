@@ -11,6 +11,7 @@ const baseStyles =
 const getIntentStyles = (intent: CircleEffectIntent): string => {
   const styles = {
     primary: "bg-yellow-500 text-black",
+    secondary: "bg-background-gray",
   };
 
   return styles[intent];
@@ -18,9 +19,10 @@ const getIntentStyles = (intent: CircleEffectIntent): string => {
 
 const getSizeStyles = (size: CircleEffectSize): string => {
   const styles = {
-    sm: "w-8",
-    md: "w-10",
-    lg: "w-12",
+    sm: "w-8 h-8",
+    md: "w-10 h-10",
+    lg: "w-12 h-12",
+    auto: "p-2",
   };
 
   return styles[size];
@@ -29,7 +31,7 @@ const getSizeStyles = (size: CircleEffectSize): string => {
 export const CircleEffect: React.FC<CircleEffectProps> = ({
   children,
   intent,
-  size = "md",
+  size = "auto",
   className,
   ...props
 }) => {

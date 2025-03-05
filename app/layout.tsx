@@ -38,6 +38,16 @@ const sora = localFont({
   ],
   variable: "--font-sora",
 });
+const inter = localFont({
+  src: [
+    {
+      path: "./fonts/Inter-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Arthur Laurijssen Resume",
@@ -51,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sora.variable}>
+      <body className={`${sora.variable} ${inter.variable}`}>
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
           {children}
         </div>

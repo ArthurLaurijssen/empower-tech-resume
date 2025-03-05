@@ -8,11 +8,17 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sora: ["var(--font-sora)"],
+        inter: ["var(--font-inter)"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "darker-gray": "#DADED7",
         "text-gray": "#595959",
+        "text-light-gray": "rgba(208, 204, 204, 1)",
+        "background-gray": "rgba(36, 37, 36, 1)",
       },
       backgroundImage: {
         "primary-gradient": "linear-gradient(to bottom, #eaefe8, #e5e7e5)",

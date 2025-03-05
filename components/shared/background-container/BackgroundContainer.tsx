@@ -2,16 +2,17 @@ import React from "react";
 import {
   BackgroundContainerProps,
   BackgroundIntent,
+  SemanticElement,
 } from "@/components/shared/background-container/types";
 
 export const BackgroundContainer: React.FC<BackgroundContainerProps> = ({
   children,
   intent,
   as = "div",
-  className,
+  className = "",
   ...props
 }) => {
-  const Element = as;
+  const Element: SemanticElement = as;
 
   return (
     <Element
