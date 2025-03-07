@@ -5,7 +5,10 @@ export interface BackgroundContainerProps extends HTMLAttributes<HTMLElement> {
   as?: SemanticElement;
 }
 
-export type BackgroundIntent = "primary_gray" | "secondary_black";
+export type BackgroundIntent =
+  | "primary_gray"
+  | "secondary_black"
+  | "mission_gray";
 export type SemanticElement =
   | "div"
   | "section"

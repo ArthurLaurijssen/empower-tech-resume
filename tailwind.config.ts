@@ -18,6 +18,8 @@ export default {
         "darker-gray": "#DADED7",
         "text-gray": "#595959",
         "text-light-gray": "rgba(208, 204, 204, 1)",
+        "text-mission-gray": "rgba(150, 150, 150, 1)",
+        "mission-background": "rgba(243, 243, 243, 1)",
         "background-gray": "rgba(36, 37, 36, 1)",
       },
       backgroundImage: {

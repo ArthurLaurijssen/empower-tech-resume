@@ -2,6 +2,7 @@ import { DeveloperService } from "@/lib/services/developer/DeveloperService";
 import { Header } from "@/components/header/Header";
 import BreakPointIndicator from "@/components/shared/break-point-indicator/BreakPointIndicator";
 import { DeveloperSkillsContainer } from "@/components/developer-skills/DeveloperSkillsContainer";
+import { Mission } from "@/components/mission/Mission";
 
 export default async function Home() {
   const developer = await DeveloperService.getDeveloper();
@@ -14,6 +15,7 @@ export default async function Home() {
       <DeveloperSkillsContainer
         developerSkills={developer.developerProficiencies}
       ></DeveloperSkillsContainer>
+      <Mission mission={developer.mission}></Mission>
     </>
   );
 }
