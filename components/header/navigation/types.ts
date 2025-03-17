@@ -4,7 +4,11 @@ export interface NavigationItemProps {
   item: NavigationLinkItem;
 }
 
-export type NavigationProps = HTMLAttributes<HTMLElement>;
+/**
+ * Props for the Navigation component
+ * Extends HTML nav element attributes but with custom children handling
+ */
+export type NavigationProps = Omit<HTMLAttributes<HTMLElement>, "children">;
 export interface NavigationLinkItem {
   label: string;
   href: string;

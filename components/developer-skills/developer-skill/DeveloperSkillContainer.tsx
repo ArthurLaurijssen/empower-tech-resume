@@ -14,7 +14,7 @@ export const DeveloperSkillContainer: React.FC<
   className = "",
   ...props
 }: DeveloperSkillContainerProps) => {
-  const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = React.useState<boolean>(skillIndex == 0);
 
   const toggleExpand = () => {
     setIsExpanded((prevState) => !prevState);

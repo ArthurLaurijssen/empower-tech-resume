@@ -17,4 +17,9 @@ export enum ExperienceType {
    * Represents a certification experience.
    */
   Certification = "Certification",
+
+  /**
+   * Represents an internship experience, such as at the end of your education.
+   */
+  Internship = "Internship",
 }

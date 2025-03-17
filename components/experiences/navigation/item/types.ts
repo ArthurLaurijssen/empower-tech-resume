@@ -1,7 +1,7 @@
 import { ExperienceType } from "@/models/enums/ExperienceType";
 import { HTMLAttributes } from "react";
 
-export interface ExperienceNavigationItem
+export interface ExperienceNavigationItemProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
-  type: ExperienceType;
+  experienceType: ExperienceType;
 }

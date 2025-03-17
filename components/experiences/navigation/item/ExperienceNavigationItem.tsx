@@ -1,10 +1,12 @@
 import React from "react";
-import { ExperienceCardProps } from "@/components/experiences/experience-card/types";
+import { ExperienceNavigationItemProps } from "@/components/experiences/navigation/item/types";
 
-export const ExperienceNavigationItem: React.FC<ExperienceCardProps> = ({
-  experience,
+export const ExperienceNavigationItem: React.FC<
+  ExperienceNavigationItemProps
+> = ({
+  experienceType,
   className = "",
   ...props
-}: ExperienceCardProps) => {
-  return <div></div>;
+}: ExperienceNavigationItemProps) => {
+  return <div>{experienceType}</div>;
 };
