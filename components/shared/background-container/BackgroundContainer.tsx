@@ -31,6 +31,7 @@ const getBackgroundStyles = (intent: BackgroundIntent): string => {
     primary_gray: "bg-primary-gradient",
     secondary_black: "bg-black",
     mission_gray: "bg-mission-background",
+    white: "bg-white",
   };
 
   return `${baseStyles} ${styles[intent]}`;

@@ -8,7 +8,8 @@ export interface BackgroundContainerProps extends HTMLAttributes<HTMLElement> {
 export type BackgroundIntent =
   | "primary_gray"
   | "secondary_black"
-  | "mission_gray";
+  | "mission_gray"
+  | "white";
 export type SemanticElement =
   | "div"
   | "section"

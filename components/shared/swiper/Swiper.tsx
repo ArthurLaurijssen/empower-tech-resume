@@ -17,12 +17,12 @@ import { ArrowRightIcon } from "@/components/shared/icons/arrow-right-icon/Arrow
  * Swiper Component
  *
  * A responsive, touch-enabled carousel/slider component that allows users to navigate
- * through a collection of slides with touch gestures or navigation buttons.
+ * through a collection of slides with touch gestures or filter buttons.
  *
  * Features:
  * - Responsive design that adapts to container width
  * - Touch swipe support with elastic boundaries
- * - Automatic detection of whether navigation buttons are needed
+ * - Automatic detection of whether filter buttons are needed
  * - Precise calculation of visible slides
  * - Smooth animations and transitions
  *
@@ -39,7 +39,7 @@ export const Swiper: React.FC<SwiperProps> = ({
   const containerRef = useRef<HTMLDivElement>(null); // Reference to the outer container
 
   // State for slider behavior and calculations
-  const [requireButtons, setRequireButtons] = useState<boolean>(false); // Whether navigation buttons should be displayed
+  const [requireButtons, setRequireButtons] = useState<boolean>(false); // Whether filter buttons should be displayed
   const [position, setPosition] = useState(0); // Current slide position index
   const [fullyVisibleSlides, setFullyVisibleSlides] = useState(0); // Number of fully visible slides
   const [containerWidth, setContainerWidth] = useState(0); // Width of the container element

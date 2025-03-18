@@ -12,6 +12,8 @@ const getIntentStyles = (intent: CircleEffectIntent): string => {
   const styles = {
     primary: "bg-yellow-500 text-black",
     secondary: "bg-background-gray",
+    secondary_white: "bg-background-gray text-white",
+    black: "bg-black text-white",
   };
 
   return styles[intent];

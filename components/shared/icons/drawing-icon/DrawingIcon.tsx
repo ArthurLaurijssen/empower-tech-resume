@@ -1,7 +1,7 @@
 import React from "react";
 import { IconProps } from "@/components/shared/icons/base/types";
 
-export const MissionDrawingIcon: React.FC<IconProps> = (props) => (
+export const DrawingIcon: React.FC<IconProps> = (props) => (
   <svg
     width="119"
     height="114"

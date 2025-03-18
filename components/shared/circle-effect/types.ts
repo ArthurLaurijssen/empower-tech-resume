@@ -1,6 +1,10 @@
 import { ReactNode, HTMLAttributes } from "react";
 
-export type CircleEffectIntent = "primary" | "secondary";
+export type CircleEffectIntent =
+  | "primary"
+  | "secondary"
+  | "secondary_white"
+  | "black";
 
 export type CircleEffectSize = "sm" | "md" | "lg" | "auto";
 
