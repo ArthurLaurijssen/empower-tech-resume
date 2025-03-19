@@ -3,8 +3,9 @@ import { ButtonProps, ButtonIntent, ButtonSize } from "./types";
 
 /**
  * Generate button styles based on specified intent and size
- * @param intent - Visual style of the button
- * @param size - Size variant of the button
+ *
+ * @param intent - Visual style of the button (primary, secondary, filter, orange)
+ * @param size - Size variant of the button (sm, md, lg, xl, xxl)
  * @param isActive - Whether the button is in active state (for filter buttons)
  * @returns Tailwind CSS classes for the button
  */
@@ -31,8 +32,8 @@ const getButtonStyles = (
     secondary:
       "border border-gray-300 text-gray-800 hover:bg-white hover:shadow-sm rounded-3xl",
     filter: isActive
-      ? "bg-yellow-500 rounded-3xl"
-      : "border border-gray-300 rounded-3xl",
+      ? "bg-yellow-500 rounded-3xl" // Active filter button style
+      : "border border-gray-300 rounded-3xl", // Inactive filter button style
     orange: "bg-yellow-500 rounded-full text-black",
   };
 
@@ -40,18 +41,25 @@ const getButtonStyles = (
   return `${baseStyles} ${sizeStyles[size]} ${intentStyles[intent]}`;
 };
 
+/**
+ * Button component provides a consistent button implementation with
+ * various visual styles and sizes.
+ *
+ * It supports different intents (primary, secondary, filter, orange)
+ * and sizes (sm, md, lg, xl, xxl) with appropriate styling.
+ */
 export const Button: React.FC<ButtonProps> = ({
-  children,
-  intent = "primary",
-  size = "md",
-  isActive,
-  className,
-  ...props
+  children, // Content to display inside the button
+  intent = "primary", // Visual style to apply
+  size = "md", // Size variant
+  isActive, // Active state (used for filter buttons)
+  className, // Additional CSS classes
+  ...props // All other HTML button attributes
 }) => {
   return (
     <button
       className={`${getButtonStyles(intent, size, isActive)} ${className || ""}`}
-      aria-pressed={isActive}
+      aria-pressed={isActive} // Accessibility attribute for toggle buttons
       {...props}
     >
       {children}

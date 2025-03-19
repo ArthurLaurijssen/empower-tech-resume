@@ -2,6 +2,10 @@ import { HTMLAttributes } from "react";
 import { Experience } from "@/models/entities/Experience";
 import { ExperienceType } from "@/models/enums/ExperienceType";
 
+/**
+ * Props interface for the ExperienceFilters component
+ * Extends HTML div element attributes while excluding the children prop
+ */
 export interface ExperienceFiltersProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   /**
@@ -16,6 +20,7 @@ export interface ExperienceFiltersProps
 
   /**
    * Callback function when filters change
+   * @param newFilters - Updated array of active filter types
    */
   onFilterChange: (newFilters: ExperienceType[]) => void;
 }

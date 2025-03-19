@@ -8,15 +8,29 @@ import { ExperienceCard } from "@/components/experiences/experience-card/Experie
 import { CircleIcon } from "@/components/shared/icons/circle-icon/CircleIcon";
 import { LineIcon } from "@/components/shared/icons/line-icon/LineIcon";
 
+/**
+ * Experiences Component
+ *
+ * Displays a filterable grid of work experiences and diplomas.
+ * This component allows users to filter experiences by type and displays them in a responsive grid layout.
+ * It includes decorative elements (CircleIcon and LineIcon) for visual appeal.
+ *
+ * Uses the "use client" directive to indicate this is a client-side component in Next.js.
+ *
+ * @component
+ */
 export const Experiences: React.FC<ExperiencesProps> = ({
-  experiences,
-  className = "",
-  ...props
+  experiences, // Array of experience objects to display
+  className = "", // Optional CSS class name for additional styling
+  ...props // All other HTML section element props
 }: ExperiencesProps) => {
-  // State to track active filters
+  // State to track active filters (which experience types are currently selected)
   const [activeFilters, setActiveFilters] = useState<ExperienceType[]>([]);
 
-  // Filter experiences based on active filters
+  /**
+   * Memoized filtered experiences based on active filters
+   * Recalculates only when experiences array or activeFilters change
+   */
   const filteredExperiences = useMemo(() => {
     // If no filters are active, show all experiences
     if (activeFilters.length === 0) {
@@ -31,32 +45,38 @@ export const Experiences: React.FC<ExperiencesProps> = ({
 
   return (
     <BackgroundContainer
-      as="section"
-      intent="primary_gray"
-      className={`relative p-10 ${className}`}
+      as="section" // Renders as a semantic section element
+      intent="primary_gray" // Sets the background color scheme
+      className={`relative p-10 ${className}`} // Padding and positioning, merges with provided className
       {...props} // Forward all other props like id, aria-* attributes, etc.
     >
+      {/* Main heading - responsive font size */}
       <h1 className="text-3xl md:text-4xl xl:text-6xl font-semibold text-black text-center md:text-left">
-        Work experiences & diploma's
+        Work experiences & diploma&apos;s
       </h1>
+
+      {/* Filter component for selecting experience types */}
       <ExperienceFilters
-        experiences={experiences}
-        activeFilters={activeFilters}
-        onFilterChange={setActiveFilters}
-        className="mt-5 mx-auto"
+        experiences={experiences} // All experiences for generating filter options
+        activeFilters={activeFilters} // Currently selected filters
+        onFilterChange={setActiveFilters} // Handler for filter changes
+        className="mt-5 mx-auto" // Margin and centering
       />
-      {/* Drawn icon */}
+
+      {/* Decorative icons - positioned absolutely */}
       <CircleIcon className="absolute top-16 md:top-56 left-5 lg:left-2 text-black/90" />
       <LineIcon className="hidden xl:block xl:absolute xl:-top-16 right-0 text-black/90" />
-      {/* Responsive grid layout */}
+
+      {/* Responsive grid layout - single column on mobile, two columns on xl screens */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">
+        {/* Map through filtered experiences to render experience cards */}
         {filteredExperiences.map((experience) => (
           <ExperienceCard
             key={
               experience.id ||
-              `${experience.title}-${experience.experienceType}`
+              `${experience.title}-${experience.experienceType}` // Fallback key if id is not available
             }
-            experience={experience}
+            experience={experience} // Pass the experience data to the card
           />
         ))}
       </div>

@@ -1,9 +1,52 @@
+/**
+ * Props interface for the StarRating component
+ */
 export interface StarRatingProps {
-  rating: number; // Rating value (percentage from 0-100)
-  maxStars?: number; // Number of stars to display (default: 5)
-  size?: number; // Size of the stars (default: 24)
-  colorClass?: string; // Tailwind color class for filled stars (default: "text-yellow-500")
-  emptyColorClass?: string; // Tailwind color class for empty stars (default: "text-gray-500")
-  className?: string; // Additional class names
-  showEmpty?: boolean; // Show empty stars (default: true)
+  /**
+   * Rating value as a percentage from 0-100
+   * This will be converted to stars based on the maxStars value
+   * Example: rating=60 with maxStars=5 will display 3 stars (60% of 5)
+   */
+  rating: number;
+
+  /**
+   * Maximum number of stars to display
+   * The rating percentage will be mapped to this scale
+   * @default 5
+   */
+  maxStars?: number;
+
+  /**
+   * Size of each star icon in pixels
+   * Controls the visual size of all star icons
+   * @default 24
+   */
+  size?: number;
+
+  /**
+   * Tailwind CSS color class for filled and half-filled stars
+   * Controls the color of the filled portion of the rating
+   * @default "text-black"
+   */
+  colorClass?: string;
+
+  /**
+   * Tailwind CSS color class for empty stars
+   * Controls the color of the unfilled portion of the rating
+   * @default "text-black"
+   */
+  emptyColorClass?: string;
+
+  /**
+   * Additional CSS class names to apply to the container div
+   * Useful for adding custom styling or layout adjustments
+   */
+  className?: string;
+
+  /**
+   * Whether to display empty stars or not
+   * When false, only filled and half-filled stars will be shown
+   * @default true
+   */
+  showEmpty?: boolean;
 }

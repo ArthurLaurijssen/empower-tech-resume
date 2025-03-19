@@ -312,7 +312,7 @@ export const Swiper: React.FC<SwiperProps> = ({
             {position > 0 && (
               <CircleEffect
                 intent="secondary"
-                className="absolute left-2 -translate-x-1/2 top-1/3 cursor-pointer z-10"
+                className="absolute left-1 top-1/3 cursor-pointer z-10"
                 onClick={handlePrevious}
               >
                 <ArrowLeftIcon className="text-white" size={64} />
@@ -322,7 +322,7 @@ export const Swiper: React.FC<SwiperProps> = ({
             {position + fullyVisibleSlides < totalChildren && (
               <CircleEffect
                 intent="secondary"
-                className="absolute right-2 translate-x-1/2 top-1/3 cursor-pointer z-10"
+                className="absolute right-1 top-1/3 cursor-pointer z-10"
                 onClick={handleNext}
               >
                 <ArrowRightIcon className="text-white" size={64} />

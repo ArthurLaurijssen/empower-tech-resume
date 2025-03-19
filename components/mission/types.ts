@@ -3,10 +3,20 @@ import React from "react";
 
 /**
  * Props for the Mission component
- * Extends HTML section element props while requiring mission data
- * Explicitly does not accept children props
+ *
+ * This interface defines the required properties for the Mission component.
+ * It extends standard HTML section element attributes while requiring mission data
+ * and explicitly does not accept children props.
+ *
+ * @interface MissionProps
+ * @extends {Omit<React.HTMLAttributes<HTMLElement>, "children">}
  */
 export interface MissionProps
   extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
+  /**
+   * The mission data object that contains title and description
+   * @type {Mission}
+   * @required
+   */
   mission: Mission;
 }

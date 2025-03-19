@@ -10,9 +10,5 @@ export default function NotFound() {
     router.replace("/");
   }, [router]);
 
-  return (
-    <div>
-      <p>Redirecting to home page...</p>
-    </div>
-  );
+  return <></>;
 }
