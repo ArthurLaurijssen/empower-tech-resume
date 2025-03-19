@@ -18,7 +18,6 @@ export const DeveloperSkillsContainer: React.FC<
       className={`relative p-10 ${className}`}
       {...props} // Forward all other props like id, aria-* attributes, etc.
     >
-      {/*SocialMediaLinks */}
       <div className="w-4/5 md:w-full mx-auto">
         <h1 className="text-white text-5xl lg:text-6xl font-semibold text-center md:text-left">
           Languages & experiences

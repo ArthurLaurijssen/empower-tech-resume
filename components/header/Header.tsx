@@ -8,7 +8,7 @@ import { GradientEffect } from "@/components/shared/gradient-effect/GradientEffe
 import { HeaderDiscussButton } from "@/components/header/discuss-button/HeaderDiscussButton";
 import { ExperienceContainer } from "@/components/header/experience-container/ExperienceContainer";
 import { UnionIcon } from "@/components/shared/icons/union-icon/UnionIcon";
-import { StarIcon } from "@/components/shared/icons/star-icon/StarIcon";
+import { DrawnStarIcon } from "@/components/shared/icons/drawn-star-icon/DrawnStarIcon";
 import { LineIcon } from "@/components/shared/icons/line-icon/LineIcon";
 import { CircleIcon } from "@/components/shared/icons/circle-icon/CircleIcon";
 
@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Decorative icons positioned absolutely for visual interest */}
       <UnionIcon className="absolute -left-10 -bottom-10 md:bottom-0 md:left-1 text-text-gray/30" />
-      <StarIcon className="absolute top-28 -right-2 md:right-5 text-text-gray/20" />
+      <DrawnStarIcon className="absolute top-28 -right-2 md:right-5 text-text-gray/20" />
       <LineIcon className="absolute bottom-1/4 right-0 text-black/90" />
       <CircleIcon className="absolute top-4 md:top-28 left-10 text-black/90" />
 

@@ -9,10 +9,10 @@ export const ProjectsContainer: React.FC<ProjectsContainerProps> = ({
   ...props
 }: ProjectsContainerProps) => {
   return (
-    <div className={`pt-6 ${className}`} {...props}>
+    <div className={`pt-6 relative ${className}`} {...props}>
       <Swiper slideWidth={400}>
         {projects.map((project, index) => (
-          <ProjectCard project={project} key={index} className="w-[4OOpx]" />
+          <ProjectCard project={project} key={index} className="w-[400px]" />
         ))}
       </Swiper>
     </div>
