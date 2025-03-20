@@ -1,27 +1,44 @@
+"use client";
+
 import React from "react";
 import { Button } from "@/components/shared/button/Button";
 import { CircleEffect } from "@/components/shared/circle-effect/CircleEffect";
 import { ArrowUpIcon } from "@/components/shared/icons/arrow-up-icon/ArrowUpIcon";
-import { HeaderDiscussButtonProps } from "./types";
+import { HeaderGetInTouchButtonProps } from "./types";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll/UseSmoothScroll";
 
 /**
- * A specialized button for header project discussion CTAs
+ * A specialized button for header "Get in Touch" CTAs
  * Uses primary styling (black background, white text) with an arrow icon
  * Wraps the base Button component with specific styling and content
- *
  */
-export const HeaderDiscussButton: React.FC<HeaderDiscussButtonProps> = ({
+export const HeaderGetInTouchButton: React.FC<HeaderGetInTouchButtonProps> = ({
   className, // Optional CSS class for extending styles
   onClick, // Click handler function
-  text = "Discuss your project", // Button text with default value
+  text = "Get in touch", // Button text with default value
+  targetId = "footer", // Default target is footer
+  scrollOffset = 20, // Default scroll offset
   ...props // Additional HTML button attributes
 }) => {
+  const { scrollToElement } = useSmoothScroll({ offset: scrollOffset });
+
+  // Handle button click with smooth scrolling
+  const handleClick = () => {
+    // Call the provided onClick if it exists
+    if (onClick) {
+      onClick();
+    }
+
+    // Scroll to the target element
+    scrollToElement(targetId);
+  };
+
   return (
     <Button
       intent="primary" // Uses the primary color scheme
       size="xl" // Extra large size variant
       className={className}
-      onClick={onClick}
+      onClick={handleClick}
       {...props}
     >
       {/* Content container with flex layout */}

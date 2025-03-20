@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { BackgroundContainer } from "@/components/shared/background-container/BackgroundContainer";
 import { DeveloperSkillsContainerProps } from "@/components/developer-skills/types";
 import { PlusDrawingIcon } from "@/components/shared/icons/plus-drawing-icon/PlusDrawingIcon";
@@ -9,7 +9,7 @@ import { DeveloperSkillContainer } from "@/components/developer-skills/developer
  * with a themed background and header.
  *
  * This component serves as the main container for showcasing a developer's
- * languages and experiences.
+ * languages and experiences, sorted by proficiency level (highest first).
  */
 export const DeveloperSkillsContainer: React.FC<
   DeveloperSkillsContainerProps
@@ -18,6 +18,13 @@ export const DeveloperSkillsContainer: React.FC<
   className = "", // Optional additional CSS classes
   ...props // All other HTML section element props
 }: DeveloperSkillsContainerProps) => {
+  // Sort skills by proficiency level (highest first)
+  const sortedSkills = useMemo(() => {
+    return [...developerSkills].sort((a, b) => {
+      return (b.proficiencyLevel ?? 0) - (a.proficiencyLevel ?? 0);
+    });
+  }, [developerSkills]);
+
   return (
     <BackgroundContainer
       as="section" // Render as a semantic section element
@@ -35,13 +42,13 @@ export const DeveloperSkillsContainer: React.FC<
       {/* Decorative plus icon in the corner */}
       <PlusDrawingIcon className="text-white absolute top-1 right-2 sm:top-3 sm:right-6 lg:right-16 lg:top-6" />
 
-      {/* List of developer skills */}
-      {developerSkills.map((skill, i) => (
+      {/* List of developer skills, now sorted by proficiency level */}
+      {sortedSkills.map((skill, i) => (
         <DeveloperSkillContainer
           developerSkill={skill} // Individual skill data
           skillIndex={i} // Position in the skills array
-          key={i} // React key for list rendering
-          isLast={developerSkills.length === i + 1} // Flag to identify the last item
+          key={skill.id ?? i} // React key for list rendering (using id if available)
+          isLast={sortedSkills.length === i + 1} // Flag to identify the last item
         />
       ))}
     </BackgroundContainer>

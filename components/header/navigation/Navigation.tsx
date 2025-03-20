@@ -5,7 +5,7 @@ import {
 } from "@/components/header/navigation/types";
 import { NavigationItem } from "@/components/header/navigation/NavigationItem";
 import { NavigationLogo } from "@/components/header/navigation/NavigationLogo";
-import { Button } from "@/components/shared/button/Button";
+import { NavigationContactButton } from "@/components/header/navigation/NavigationContactButton";
 
 /**
  * Navigation component that renders the main navigation bar.
@@ -38,7 +38,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       </ul>
 
       {/* Contact button in the right section */}
-      <Button intent="secondary">Contact me</Button>
+      <NavigationContactButton />
     </nav>
   );
 };

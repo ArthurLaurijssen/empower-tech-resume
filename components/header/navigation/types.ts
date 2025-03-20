@@ -42,3 +42,28 @@ export const navigationItems: NavigationLinkItem[] = [
     href: "#experiences", // Anchor link to experiences section
   },
 ];
+
+export interface NavigationContactButtonProps {
+  /**
+   * Optional CSS class name for extending styles
+   */
+  className?: string;
+
+  /**
+   * Button text
+   * @default "Contact me"
+   */
+  text?: string;
+
+  /**
+   * Target element ID to scroll to when clicked
+   * @default "footer"
+   */
+  targetId?: string;
+
+  /**
+   * Offset in pixels from the target element
+   * @default 20
+   */
+  scrollOffset?: number;
+}

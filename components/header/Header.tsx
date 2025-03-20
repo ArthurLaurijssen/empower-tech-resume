@@ -5,12 +5,12 @@ import Image from "next/image";
 import { BackgroundContainer } from "@/components/shared/background-container/BackgroundContainer";
 import { GreetingContainer } from "@/components/header/greeting-container/GreetingContainer";
 import { GradientEffect } from "@/components/shared/gradient-effect/GradientEffect";
-import { HeaderDiscussButton } from "@/components/header/discuss-button/HeaderDiscussButton";
 import { ExperienceContainer } from "@/components/header/experience-container/ExperienceContainer";
 import { UnionIcon } from "@/components/shared/icons/union-icon/UnionIcon";
 import { DrawnStarIcon } from "@/components/shared/icons/drawn-star-icon/DrawnStarIcon";
 import { LineIcon } from "@/components/shared/icons/line-icon/LineIcon";
 import { CircleIcon } from "@/components/shared/icons/circle-icon/CircleIcon";
+import { HeaderGetInTouchButton } from "@/components/header/get-in-touch-button/HeaderGetInTouchButton";
 
 /**
  * Main header component that displays developer information, portfolio greeting,
@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* CTA button - centered at bottom of container */}
-            <HeaderDiscussButton className="absolute left-1/2 -translate-x-1/2 bottom-[5%] w-fit" />
+            <HeaderGetInTouchButton className="absolute left-1/2 -translate-x-1/2 bottom-[5%] w-fit" />
           </div>
         </div>
       </GradientEffect>
