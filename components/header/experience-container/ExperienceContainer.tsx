@@ -33,7 +33,9 @@ export const ExperienceContainer: React.FC<ExperienceContainerProps> = ({
           <span className="text-xl font-normal text-text-gray">Years</span>
 
           {/* Title of the experience category */}
-          <h3 className="text-black font-semibold text-2xl">{title}</h3>
+          <h3 className="text-black font-semibold text-lg sm:text:xl md:text-2xl whitespace-nowrap">
+            {title}
+          </h3>
         </div>
       </div>
     </div>

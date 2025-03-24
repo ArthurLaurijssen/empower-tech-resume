@@ -41,6 +41,7 @@ const getSizeStyles = (size: CircleEffectSize): string => {
     md: "w-10 h-10", // Medium fixed size (40px)
     lg: "w-12 h-12", // Large fixed size (48px)
     auto: "p-2", // Flexible size with padding
+    custom: "", // Empty string, will use customSize instead
   };
 
   return styles[size];
@@ -56,13 +57,16 @@ const getSizeStyles = (size: CircleEffectSize): string => {
 export const CircleEffect: React.FC<CircleEffectProps> = ({
   children, // Content to display inside the circle
   intent, // Visual style to apply (primary, secondary, etc.)
-  size = "auto", // Size variant (sm, md, lg, auto)
+  size = "auto", // Size variant (sm, md, lg, auto, custom)
+  customSize = "", // Custom size Tailwind classes for responsive sizing
   className, // Additional CSS classes
   ...props // All other HTML div attributes
 }) => {
   // Get the appropriate styles based on props
   const intentStyle = getIntentStyles(intent);
-  const sizeStyle = getSizeStyles(size);
+
+  // Determine which size style to use
+  const sizeStyle = size === "custom" ? customSize : getSizeStyles(size);
 
   return (
     <div

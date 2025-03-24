@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
             />
 
             {/* Experience containers - centered on mobile, right-aligned on desktop */}
-            <div className="flex flex-col items-center space-y-4 absolute right-1/2 translate-x-1/2 bottom-[23%] w-fit md:translate-x-1/2 md:right-1/4">
+            <div className="flex flex-col items-center space-y-4 absolute right-1/2 translate-x-1/2 bottom-[20%] md:bottom-[23%] w-fit md:translate-x-1/2 md:right-1/4">
               {/* Work experience indicator */}
               <ExperienceContainer
                 startDate={developer.workExperienceStartDate}

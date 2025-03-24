@@ -44,13 +44,17 @@ export const HeaderGetInTouchButton: React.FC<HeaderGetInTouchButtonProps> = ({
       {/* Content container with flex layout */}
       <div className="flex items-center justify-center gap-6">
         {/* Button text with no-wrap to prevent breaking */}
-        <span className="whitespace-nowrap text-5xl font-bold inline-block">
+        <span className="whitespace-nowrap text-2xl md:text-5xl font-bold inline-block">
           {text}
         </span>
 
         {/* Circular container with arrow icon */}
-        <CircleEffect intent="primary" size="lg">
-          <ArrowUpIcon size={32} />
+        <CircleEffect
+          intent="primary"
+          size="custom"
+          customSize="w-8 h-8 md:w-12 md:h-12"
+        >
+          <ArrowUpIcon className="w-4 h-4 md:w-8 md:h-8" />
         </CircleEffect>
       </div>
     </Button>

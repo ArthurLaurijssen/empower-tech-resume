@@ -21,8 +21,9 @@ export type CircleEffectIntent =
  * - md: Medium fixed size (40px × 40px)
  * - lg: Large fixed size (48px × 48px)
  * - auto: Flexible size that adapts to content with padding
+ * - custom: Size defined through customSize prop using Tailwind classes
  */
-export type CircleEffectSize = "sm" | "md" | "lg" | "auto";
+export type CircleEffectSize = "sm" | "md" | "lg" | "auto" | "custom";
 
 /**
  * Props interface for the CircleEffect component
@@ -47,4 +48,11 @@ export interface CircleEffectProps extends HTMLAttributes<HTMLDivElement> {
    * @default "auto"
    */
   size?: CircleEffectSize;
+
+  /**
+   * Custom size using Tailwind CSS classes
+   * Only applied when size is set to "custom"
+   * Can include responsive classes (e.g., "w-6 h-6 md:w-12 md:h-12")
+   */
+  customSize?: string;
 }
