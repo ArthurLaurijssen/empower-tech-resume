@@ -33,7 +33,8 @@ export abstract class BaseApiService {
         ...this.DEFAULT_HEADERS,
         ...options.headers,
       },
-      cache: "no-store", // Prevent caching of API responses
+      // Use a reasonable revalidation period instead of no-store
+      next: { revalidate: 3600 }, // Revalidate every hour (3600 seconds)
     };
 
     try {
