@@ -18,8 +18,9 @@ export type ButtonIntent = "primary" | "secondary" | "filter" | "orange";
  * - lg: Large buttons for emphasis
  * - xl: Extra large buttons for major actions
  * - xxl: Extra extra large for hero sections
+ * - custom: Custom sizing defined through customSize prop
  */
-export type ButtonSize = "sm" | "md" | "lg" | "xl" | "xxl";
+export type ButtonSize = "sm" | "md" | "lg" | "xl" | "xxl" | "custom";
 
 /**
  * Props interface for the Button component
@@ -37,6 +38,13 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * @default "md"
    */
   size?: ButtonSize;
+
+  /**
+   * Custom size Tailwind classes
+   * Only applied when size="custom"
+   * Can include responsive variants (e.g., "px-3 py-1.5 md:px-5 md:py-3")
+   */
+  customSize?: string;
 
   /**
    * Whether the button is in active/selected state

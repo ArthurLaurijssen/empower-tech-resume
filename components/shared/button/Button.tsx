@@ -5,14 +5,16 @@ import { ButtonProps, ButtonIntent, ButtonSize } from "./types";
  * Generate button styles based on specified intent and size
  *
  * @param intent - Visual style of the button (primary, secondary, filter, orange)
- * @param size - Size variant of the button (sm, md, lg, xl, xxl)
+ * @param size - Size variant of the button (sm, md, lg, xl, xxl, custom)
  * @param isActive - Whether the button is in active state (for filter buttons)
+ * @param customSize - Custom size classes when size is set to "custom"
  * @returns Tailwind CSS classes for the button
  */
 const getButtonStyles = (
   intent: ButtonIntent,
   size: ButtonSize,
   isActive?: boolean,
+  customSize?: string,
 ): string => {
   // Base styles applied to all buttons
   const baseStyles = "transition-all duration-200 font-medium";
@@ -24,6 +26,7 @@ const getButtonStyles = (
     lg: "px-6 py-3 text-lg",
     xl: "px-8 py-4 text-xl",
     xxl: "px-4 py-6 text-xl",
+    custom: customSize || "", // Use provided custom size or empty string if not provided
   };
 
   // Intent-specific styles
@@ -46,19 +49,20 @@ const getButtonStyles = (
  * various visual styles and sizes.
  *
  * It supports different intents (primary, secondary, filter, orange)
- * and sizes (sm, md, lg, xl, xxl) with appropriate styling.
+ * and sizes (sm, md, lg, xl, xxl, custom) with appropriate styling.
  */
 export const Button: React.FC<ButtonProps> = ({
   children, // Content to display inside the button
   intent = "primary", // Visual style to apply
   size = "md", // Size variant
+  customSize, // Custom size Tailwind classes
   isActive, // Active state (used for filter buttons)
   className, // Additional CSS classes
   ...props // All other HTML button attributes
 }) => {
   return (
     <button
-      className={`${getButtonStyles(intent, size, isActive)} ${className || ""}`}
+      className={`${getButtonStyles(intent, size, isActive, customSize)} ${className || ""}`}
       aria-pressed={isActive} // Accessibility attribute for toggle buttons
       {...props}
     >

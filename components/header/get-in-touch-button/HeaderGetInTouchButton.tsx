@@ -36,7 +36,8 @@ export const HeaderGetInTouchButton: React.FC<HeaderGetInTouchButtonProps> = ({
   return (
     <Button
       intent="primary" // Uses the primary color scheme
-      size="xl" // Extra large size variant
+      size="custom" // Extra large size variant
+      customSize="px-4 py-2 md:px-8 md:py-4"
       className={className}
       onClick={handleClick}
       {...props}

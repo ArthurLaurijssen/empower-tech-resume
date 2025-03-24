@@ -4,6 +4,7 @@ import { DeveloperSkillsContainer } from "@/components/developer-skills/Develope
 import { Mission } from "@/components/mission/Mission";
 import { Experiences } from "@/components/experiences/Experiences";
 import { Footer } from "@/components/footer/Footer";
+import BreakpointIndicator from "@/components/shared/break-point-indicator/BreakPointIndicator";
 
 /**
  * Home page component that serves as the main entry point for the developer portfolio.
@@ -26,8 +27,14 @@ export default async function Home() {
   // This is executed server-side before the page is rendered
   const developer = await DeveloperService.getDeveloper();
 
+  // Check if we're in development mode
+  const isDevelopment = process.env.NODE_ENV === "development";
+
   return (
     <>
+      {/* Development-only breakpoint indicator */}
+      {isDevelopment && <BreakpointIndicator />}
+
       {/* Header section with developer profile information */}
       <Header developer={developer} id="header" />
 

@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
       <UnionIcon className="absolute -left-10 -bottom-10 md:bottom-0 md:left-1 text-text-gray/30" />
       <DrawnStarIcon className="absolute top-28 -right-2 md:right-5 text-text-gray/20" />
       <LineIcon className="absolute bottom-1/4 right-0 text-black/90" />
-      <CircleIcon className="absolute top-4 md:top-28 left-10 text-black/90" />
+      <CircleIcon className="absolute top-4 md:top-28 left-5 md:left-10 text-black/90" />
 
       {/* Greeting container - responsive positioning across breakpoints */}
       <GreetingContainer
@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
           </h1>
 
           {/* Developer image container with absolute positioning for experience indicators */}
-          <div className="relative w-full z-20 h-[500px] md:-mt-16">
+          <div className="relative w-full z-20 h-[350px] md:h-[500px] md:-mt-16">
             {/* Developer profile image - optimized with Next.js Image */}
             <Image
               src={developer.imageUrl}
@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
             />
 
             {/* Experience containers - centered on mobile, right-aligned on desktop */}
-            <div className="flex flex-col items-center space-y-4 absolute right-1/2 translate-x-1/2 bottom-[20%] md:bottom-[23%] w-fit md:translate-x-1/2 md:right-1/4">
+            <div className="flex flex-col items-center space-y-1 md:space-y-4 absolute right-1/2 translate-x-1/2 bottom-[16%] md:bottom-[23%] w-fit md:translate-x-1  md:right-2 lg:translate-x-1/2 lg:right-1/4">
               {/* Work experience indicator */}
               <ExperienceContainer
                 startDate={developer.workExperienceStartDate}
@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* CTA button - centered at bottom of container */}
-            <HeaderGetInTouchButton className="absolute left-1/2 -translate-x-1/2 bottom-[5%] w-fit" />
+            <HeaderGetInTouchButton className="absolute left-1/2 -translate-x-1/2 bottom-[1%] md:bottom-[5%] w-fit" />
           </div>
         </div>
       </GradientEffect>
