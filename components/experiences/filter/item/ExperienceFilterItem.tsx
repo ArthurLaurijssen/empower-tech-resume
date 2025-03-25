@@ -40,8 +40,10 @@ export const ExperienceFilterItem: React.FC<ExperienceFilterItemProps> = ({
       className={`flex items-center gap-2 ${className}`}
       {...props}
     >
-      {IconComponent && <IconComponent />}
-      <span className="text-black font-semibold text-2xl">
+      {IconComponent && (
+        <IconComponent className="w-4 h-4 sm:h-6 sm:w-6 md:w-8 md:h-8" />
+      )}
+      <span className="text-black font-semibold text-md sm:text-xl md:text-2xl">
         {experienceType}
       </span>
     </Button>

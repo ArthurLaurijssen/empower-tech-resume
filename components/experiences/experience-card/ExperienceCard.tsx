@@ -1,6 +1,7 @@
 import React from "react";
 import { ExperienceCardProps } from "@/components/experiences/experience-card/types";
 import { BackgroundContainer } from "@/components/shared/background-container/BackgroundContainer";
+import { LocationIcon } from "@/components/shared/icons/location-icon/LocationIcon";
 
 /**
  * ExperienceCard component displays details of a single experience entry
@@ -24,7 +25,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
    */
   const experienceEndYear: string = experience.endDate
     ? new Date(experience.endDate).getFullYear().toString()
-    : "present";
+    : "Present";
 
   return (
     <BackgroundContainer
@@ -34,15 +35,18 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
       {...props}
     >
       {/* Timeframe and location section */}
-      <div className="flex gap-3 items-center">
+      <div className="flex flex-col md:flex-row gap-1 md:gap-3 items-start md:items-center">
         <span className="text-text-gray text-2xl font-medium">
           {experienceStartYear} - {experienceEndYear}
         </span>
         {/* Decorative dot separator */}
-        <div className="rounded-full bg-dot-gray h-3 w-3"></div>
-        <span className="text-text-gray text-2xl font-medium">
-          {experience.locationName}
-        </span>
+        <div className="hidden md:block rounded-full bg-dot-gray h-3 w-3"></div>
+        <div className="flex md:block items-center gap-2">
+          <LocationIcon className="md:hidden text-text-gray h-4 w-4"></LocationIcon>
+          <span className="text-text-gray text-lg sm:text-xl md:text-2xl font-medium">
+            {experience.locationName}
+          </span>
+        </div>
       </div>
 
       {/* Experience title */}

@@ -5,7 +5,6 @@ import { BackgroundContainer } from "@/components/shared/background-container/Ba
 import { ExperienceFilters } from "@/components/experiences/filter/ExperienceFilters";
 import { ExperienceType } from "@/models/enums/ExperienceType";
 import { ExperienceCard } from "@/components/experiences/experience-card/ExperienceCard";
-import { CircleIcon } from "@/components/shared/icons/circle-icon/CircleIcon";
 import { LineIcon } from "@/components/shared/icons/line-icon/LineIcon";
 
 /**
@@ -51,8 +50,8 @@ export const Experiences: React.FC<ExperiencesProps> = ({
       {...props} // Forward all other props like id, aria-* attributes, etc.
     >
       {/* Main heading - responsive font size */}
-      <h1 className="text-3xl md:text-4xl xl:text-6xl font-semibold text-black text-center md:text-left">
-        Work experiences & diploma&apos;s
+      <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-semibold text-black text-center md:text-left">
+        Work experiences & studies
       </h1>
 
       {/* Filter component for selecting experience types */}
@@ -63,9 +62,8 @@ export const Experiences: React.FC<ExperiencesProps> = ({
         className="mt-5 mx-auto" // Margin and centering
       />
 
-      {/* Decorative icons - positioned absolutely */}
-      <CircleIcon className="absolute top-16 md:top-56 left-5 lg:left-2 text-black/90" />
-      <LineIcon className="hidden xl:block xl:absolute xl:-top-16 right-0 text-black/90" />
+      {/* Decorative icon - positioned absolutely */}
+      <LineIcon className="block absolute -top-16 right-0 text-black/90 " />
 
       {/* Responsive grid layout - single column on mobile, two columns on xl screens */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-8">

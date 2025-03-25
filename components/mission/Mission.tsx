@@ -34,7 +34,10 @@ export const Mission: FC<MissionProps> = ({
       </div>
 
       {/* Decorative drawing icon, positioned absolutely */}
-      <DrawingIcon className="absolute top-1 right-8 md:top-6 md:right-16 text-yellow-500" />
+      {/* Using scale-50 on mobile, and normal size on md breakpoint */}
+      <div className="absolute top-5 right-8 md:top-6 md:right-16 transform scale-50 md:scale-100 origin-top-right">
+        <DrawingIcon className="text-yellow-500" />
+      </div>
 
       {/* Mission description with formatted text support */}
       <FormattedText

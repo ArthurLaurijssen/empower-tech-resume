@@ -39,7 +39,10 @@ export const ExperienceFilters: React.FC<ExperienceFiltersProps> = ({
   };
 
   return (
-    <div className={`flex gap-2 flex-wrap mt-4 ${className}`} {...props}>
+    <div
+      className={`flex gap-1 sm:gap-2 flex-wrap mt-4 ${className}`}
+      {...props}
+    >
       {uniqueExperienceTypes.map((type) => (
         <ExperienceFilterItem
           experienceType={type} // The filter type (Work, Education, etc.)

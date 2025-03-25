@@ -37,7 +37,6 @@ export default async function Home() {
 
       {/* Header section with developer profile information */}
       <Header developer={developer} id="header" />
-
       <main>
         {/* Skills and projects section */}
         <DeveloperSkillsContainer
