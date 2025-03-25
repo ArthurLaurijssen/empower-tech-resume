@@ -18,12 +18,12 @@ export const ProjectsContainer: React.FC<ProjectsContainerProps> = ({
   return (
     <div className={`pt-6 relative ${className}`} {...props}>
       {/* Swiper carousel with fixed slide width */}
-      <Swiper slideWidth={400}>
+      <Swiper mode="auto">
         {projects.map((project, index) => (
           <ProjectCard
             project={project} // Individual project data
             key={index} // React key for list rendering
-            className="w-[400px]" // Fixed width for consistent card sizing
+            className="w-[250px] sm:w-[300px] md:w-[400px]" // Fixed width for consistent card sizing
           />
         ))}
       </Swiper>

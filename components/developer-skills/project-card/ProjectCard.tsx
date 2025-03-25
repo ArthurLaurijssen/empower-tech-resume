@@ -17,13 +17,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className={`${className}`} {...props}>
       {/* Project image container with fixed dimensions */}
-      <div className="relative w-[400px] h-[250px] mb-6">
+      <div className="relative w-[250px] sm:w-[300px] md:w-[400px] h-[156.25px] sm:h-[187.5px] md:h-[250px] mb-6">
         <Image
-          src={project.imageUrl} // Source URL of the project image
-          alt={project.title} // Accessible alt text using the project title
-          fill // Fill the parent container
-          className="object-cover rounded-2xl" // Cover fit with rounded corners
-          sizes="400px" // Responsive image sizing hint
+          src={project.imageUrl}
+          alt={project.title}
+          fill
+          className="object-cover rounded-2xl"
+          sizes="(max-width: 640px) 250px, (max-width: 768px) 300px, 400px"
         />
       </div>
 

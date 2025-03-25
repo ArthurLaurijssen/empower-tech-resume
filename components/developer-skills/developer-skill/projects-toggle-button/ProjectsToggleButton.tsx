@@ -22,8 +22,16 @@ export const ProjectsToggleButton: React.FC<ProjectsToggleButtonProps> = ({
       </span>
 
       {/* Circular button with appropriate icon based on expanded state */}
-      <CircleEffect intent={isExpanded ? "primary" : "secondary"} size="md">
-        {isExpanded ? <CloseIcon /> : <PlusIcon className="text-white" />}
+      <CircleEffect
+        intent={isExpanded ? "primary" : "secondary"}
+        size="custom"
+        customSize="w-8 h-8 sm:w-12 sm:h-12"
+      >
+        {isExpanded ? (
+          <CloseIcon className="w-4 h-4 sm:w-8 sm:h-8" />
+        ) : (
+          <PlusIcon className="text-white w-4 h-4 sm:w-8 sm:h-8" />
+        )}
       </CircleEffect>
     </div>
   );

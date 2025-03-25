@@ -6,30 +6,32 @@ import { EmptyStarIcon } from "@/components/shared/icons/empty-star-icon/EmptySt
 
 /**
  * StarRating component displays a star rating visualization based on a percentage value.
- *
- * The component supports customization of the number of stars, size, colors,
- * and whether to display empty stars or not.
+ * Uses Tailwind's responsive classes to handle small screens - showing stars on larger screens
+ * and numeric representation on smaller screens.
  *
  * Example usage:
  * ```tsx
  * <StarRating rating={75} /> // Shows 3.75 out of 5 stars (75%)
  * <StarRating rating={80} maxStars={10} /> // Shows 8 out of 10 stars (80%)
+ * <StarRating rating={75} showNumeric={true} /> // Shows both stars and numeric
  * ```
  */
 export const StarRating: React.FC<StarRatingProps> = ({
-  rating, // Percentage rating from 0-100
-  maxStars = 5, // Total number of stars to display
-  size = 24, // Size of each star icon in pixels
-  colorClass = "text-black", // Color class for filled/half stars
-  emptyColorClass = "text-black", // Color class for empty stars
-  className = "", // Additional CSS classes for the container
-  showEmpty = true, // Whether to show empty stars
+  rating,
+  maxStars = 5,
+  size = 24,
+  colorClass = "text-black",
+  emptyColorClass = "text-black",
+  className = "",
+  showEmpty = true,
+  showNumeric = false,
 }) => {
   /**
    * Convert percentage rating (0-100) to star rating (0-maxStars scale)
    * For example: 80% with maxStars=5 becomes 4 stars
    */
   const normalizedRating = (rating / 100) * maxStars;
+  const ratingValue = parseFloat(normalizedRating.toFixed(1));
 
   /**
    * Calculate the number of full, half, and empty stars to display
@@ -42,28 +44,39 @@ export const StarRating: React.FC<StarRatingProps> = ({
   const emptyStars = maxStars - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
-    <div className={`flex items-center gap-1 ${className}`}>
-      {/* Render full stars */}
-      {Array.from({ length: fullStars }).map((_, index) => (
-        <span key={`full-${index}`} className={colorClass}>
-          <StarIcon size={size} />
-        </span>
-      ))}
+    <div className={`flex items-center ${className}`}>
+      {/* Numeric representation (always visible on xs screens, optional on larger screens) */}
+      <div
+        className={`${showNumeric ? "" : "sm:hidden"} font-semibold ${colorClass} mr-1`}
+      >
+        {ratingValue.toFixed(1)}
+        <span className="text-sm">&nbsp;/&nbsp;{maxStars}</span>
+      </div>
 
-      {/* Render half star if applicable */}
-      {hasHalfStar && (
-        <span className={colorClass}>
-          <HalfStarIcon size={size} />
-        </span>
-      )}
-
-      {/* Render empty stars if showEmpty is true */}
-      {showEmpty &&
-        Array.from({ length: emptyStars }).map((_, index) => (
-          <span key={`empty-${index}`} className={emptyColorClass}>
-            <EmptyStarIcon size={size} />
+      {/* Star representation (hidden on xs screens, visible on sm and up) */}
+      <div className="hidden sm:flex items-center gap-1">
+        {/* Render full stars */}
+        {Array.from({ length: fullStars }).map((_, index) => (
+          <span key={`full-${index}`} className={colorClass}>
+            <StarIcon size={size} />
           </span>
         ))}
+
+        {/* Render half star if applicable */}
+        {hasHalfStar && (
+          <span className={colorClass}>
+            <HalfStarIcon size={size} />
+          </span>
+        )}
+
+        {/* Render empty stars if showEmpty is true */}
+        {showEmpty &&
+          Array.from({ length: emptyStars }).map((_, index) => (
+            <span key={`empty-${index}`} className={emptyColorClass}>
+              <EmptyStarIcon size={size} />
+            </span>
+          ))}
+      </div>
     </div>
   );
 };

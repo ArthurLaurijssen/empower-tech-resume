@@ -34,7 +34,7 @@ export const DeveloperSkillsContainer: React.FC<
     >
       {/* Header section */}
       <div className="w-4/5 md:w-full mx-auto">
-        <h1 className="text-white text-5xl lg:text-6xl font-semibold text-center md:text-left">
+        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold text-center md:text-left">
           Languages & experiences
         </h1>
       </div>

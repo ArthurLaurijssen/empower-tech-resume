@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({
       </h1>
 
       {/* CTA button component */}
-      <FooterDiscussButton className="w-fit" />
+      <FooterDiscussButton className="w-fit hidden md:block" />
 
       {/* Divider line - thin horizontal rule */}
       <div className="w-full h-px bg-gray-800 my-6" aria-hidden="true" />

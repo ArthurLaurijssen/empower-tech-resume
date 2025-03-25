@@ -19,18 +19,18 @@ export const SkillHeader: React.FC<SkillHeaderProps> = ({
   return (
     <div className="flex gap-4">
       {/* Formatted index number (e.g., converts 0 to "01") */}
-      <span className="text-text-gray text-4xl md:text-6xl font-medium">
+      <span className="text-text-gray text-2xl sm:text-4xl md:text-6xl font-medium">
         {NumberDisplayUtils.formatIndexToDisplayNumber(skillIndex)}
       </span>
 
       {/* Technology name */}
-      <h2 className="text-white text-4xl md:text-6xl font-medium">
+      <h2 className="text-white text-2xl sm:text-4xl md:text-6xl font-medium">
         {skill.technologyName}
       </h2>
 
       {/* Proficiency level displayed as star rating only if not -1 */}
       {showProficiency && (
-        <div className="text-black font-semibold text-3xl md:text-4xl px-2 py-1 rounded-3xl my-auto bg-yellow-500">
+        <div className="text-black font-semibold md:text-4xl px-2 py-1 rounded-3xl my-auto bg-yellow-500">
           <StarRating rating={skill.proficiencyLevel}></StarRating>
         </div>
       )}
