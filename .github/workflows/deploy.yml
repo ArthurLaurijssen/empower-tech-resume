@@ -52,17 +52,23 @@ jobs:
         env:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
           DEVELOPER_API_URL: ${{ secrets.DEVELOPER_API_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: NEXT_PUBLIC_API_URL,DEVELOPER_API_URL
+          envs: NEXT_PUBLIC_API_URL,DEVELOPER_API_URL,RESEND_API_KEY,FROM_EMAIL,TO_EMAIL
           script: |
             cd ~/website-new
             
             # Create env file with proper quotes
             echo "NEXT_PUBLIC_API_URL='$NEXT_PUBLIC_API_URL'" > .env
             echo "DEVELOPER_API_URL='$DEVELOPER_API_URL'" >> .env
+            echo "RESEND_API_KEY='$RESEND_API_KEY'" >> .env
+            echo "FROM_EMAIL='$FROM_EMAIL'" >> .env
+            echo "TO_EMAIL='$TO_EMAIL'" >> .env
             chmod 600 .env
             
             # Set the specific website configuration file path

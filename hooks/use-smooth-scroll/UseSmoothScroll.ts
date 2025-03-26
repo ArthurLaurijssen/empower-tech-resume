@@ -27,7 +27,7 @@ export const useSmoothScroll = (options: SmoothScrollOptions = {}) => {
       if (element) {
         // Calculate the scroll position with specified offset
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        const offsetPosition = elementPosition + window.scrollY - offset;
 
         // Smoothly scroll to the calculated position
         window.scrollTo({

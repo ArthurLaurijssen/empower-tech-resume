@@ -24,6 +24,8 @@ const getIntentStyles = (intent: CircleEffectIntent): string => {
     secondary: "bg-background-gray", // Gray background with default text color
     secondary_white: "bg-background-gray text-white", // Gray background with white text
     black: "bg-black text-white", // Black background with white text
+    red: "bg-red-400",
+    green: "bg-green-500",
   };
 
   return styles[intent];

@@ -1,9 +1,9 @@
 import React from "react";
 import { BackgroundContainer } from "@/components/shared/background-container/BackgroundContainer";
-import { FooterDiscussButton } from "@/components/footer/discuss-button/FooterDiscussButton";
 import { SocialMediaLinks } from "@/components/footer/social-media-links/SocialMediaLinks";
 import { DrawingIcon } from "@/components/shared/icons/drawing-icon/DrawingIcon";
 import { FooterProps } from "@/components/footer/types";
+import { ContactForm } from "@/components/footer/contact-form/ContactForm";
 
 /**
  * Footer component that displays a CTA, copyright information, and social media links
@@ -25,12 +25,19 @@ export const Footer: React.FC<FooterProps> = ({
       {...props} // Forward all other props like id, aria-* attributes, etc.
     >
       {/* Call to action heading - centered on mobile, left-aligned on desktop */}
-      <h1 className="text-white text-6xl font-semibold my-6 text-center md:text-left">
-        Lets Discuss your Project
-      </h1>
+      <div className="my-6">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-semibold text-center">
+          Contact me
+        </h1>
+        <p className="text-text-gray text-base text-center">
+          Looking for a qualified developer? Fill out the form below and
+          I&#39;ll get back to you!
+        </p>
+      </div>
+      {/* Decorative drawing icon - only visible on large screens */}
+      <DrawingIcon className="absolute scale-[0.4] sm:scale-50 md:scale-75 lg:scale-100 top-1 right-1 lg:top-4 lg:right-10 text-yellow-500" />
 
-      {/* CTA button component */}
-      <FooterDiscussButton className="w-fit hidden md:block" />
+      <ContactForm />
 
       {/* Divider line - thin horizontal rule */}
       <div className="w-full h-px bg-gray-800 my-6" aria-hidden="true" />
@@ -47,9 +54,6 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Social media links component */}
         <SocialMediaLinks socialMediaLinks={developer.socialMediaLinks} />
       </div>
-
-      {/* Decorative drawing icon - only visible on large screens */}
-      <DrawingIcon className="hidden lg:block absolute top-1/4 -translate-y-1/2 right-4 xl:right-16 2xl:right-32 text-yellow-500" />
     </BackgroundContainer>
   );
 };

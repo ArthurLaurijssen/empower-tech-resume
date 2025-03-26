@@ -17,7 +17,7 @@ export type ButtonIntent = "primary" | "secondary" | "filter" | "orange";
  * - md: Medium buttons for standard use (default)
  * - lg: Large buttons for emphasis
  * - xl: Extra large buttons for major actions
- * - xxl: Extra extra large for hero sections
+ * - xxl: 2x large for hero sections
  * - custom: Custom sizing defined through customSize prop
  */
 export type ButtonSize = "sm" | "md" | "lg" | "xl" | "xxl" | "custom";

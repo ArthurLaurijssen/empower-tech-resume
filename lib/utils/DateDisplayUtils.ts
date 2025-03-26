@@ -79,47 +79,4 @@ export class DateDisplayUtils {
     const years = this.getYearsSince(fromDate);
     return this.formatNumber(years);
   }
-
-  /**
-   * Get a display object with years value and label
-   * @param fromDate The starting date (string in ISO format or Date object)
-   * @param labelSingular Label for 1 year case (default: "Year")
-   * @param labelPlural Label for multiple years case (default: "Years")
-   * @returns Object with value and appropriate label
-   */
-  static getYearsDisplay(
-    fromDate: string | Date,
-    labelSingular = "Year",
-    labelPlural = "Years",
-  ): { value: string; label: string } {
-    const years = this.getYearsSince(fromDate);
-    const formattedYears = this.formatNumber(years);
-
-    // Use correct plural form based on the value
-    const label = Math.ceil(years) === 1 ? labelSingular : labelPlural;
-
-    return {
-      value: formattedYears,
-      label,
-    };
-  }
-
-  /**
-   * Get a combined display for time periods
-   * @param data Configuration for each time period to display
-   * @returns Array of formatted display objects
-   */
-  static getTimeDisplay(
-    data: Array<{
-      date: string | Date;
-      title: string;
-      labelSingular?: string;
-      labelPlural?: string;
-    }>,
-  ): Array<{ value: string; label: string; title: string }> {
-    return data.map((item) => ({
-      ...this.getYearsDisplay(item.date, item.labelSingular, item.labelPlural),
-      title: item.title,
-    }));
-  }
 }

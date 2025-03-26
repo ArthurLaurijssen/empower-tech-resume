@@ -2,13 +2,13 @@ import React from "react";
 import { SocialMediaLinksProps } from "@/components/footer/social-media-links/types";
 import { SocialMediaNetwork } from "@/models/enums/SocialMediaNetwork";
 import { FacebookIcon } from "@/components/shared/icons/facebook-icon/FacebookIcon";
-import { XIcon } from "@/components/shared/icons/x-icon/XIcon";
 import { InstagramIcon } from "@/components/shared/icons/instagram-icon/InstagramIcon";
 import { LinkedInIcon } from "@/components/shared/icons/linkedin-icon/LinkedInIcon";
 import { GithubIcon } from "@/components/shared/icons/github-icon/GithubIcon";
 import { CircleEffect } from "@/components/shared/circle-effect/CircleEffect";
 import { GitlabIcon } from "@/components/shared/icons/gitlab-icon/GitlabIcon";
 import { WhatsappIcon } from "@/components/shared/icons/whatsapp-icon/WhatsappIcon";
+import { TwitterXIcon } from "@/components/shared/icons/twitter-x-icon/TwitterXIcon";
 
 /**
  * Component that renders a row of social media link icons.
@@ -26,7 +26,7 @@ export const SocialMediaLinks: React.FC<SocialMediaLinksProps> = ({
       case SocialMediaNetwork.Facebook:
         return <FacebookIcon size={16} />;
       case SocialMediaNetwork.X:
-        return <XIcon size={16} />;
+        return <TwitterXIcon size={16} />;
       case SocialMediaNetwork.Instagram:
         return <InstagramIcon size={16} />;
       case SocialMediaNetwork.LinkedIn:

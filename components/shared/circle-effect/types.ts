@@ -7,12 +7,16 @@ import { ReactNode, HTMLAttributes } from "react";
  * - secondary: Gray background with default text color
  * - secondary_white: Gray background with white text
  * - black: Black background with white text
+ * - red: Red background
+ * - green: Green background
  */
 export type CircleEffectIntent =
   | "primary"
   | "secondary"
   | "secondary_white"
-  | "black";
+  | "black"
+  | "red"
+  | "green";
 
 /**
  * Available size variants for the CircleEffect component

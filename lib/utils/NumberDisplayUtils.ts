@@ -31,21 +31,4 @@ export class NumberDisplayUtils {
   ): string {
     return this.formatNumberWithZeroPadding(index + 1, padLength);
   }
-
-  /**
-   * Formats a sequence of indices (0-based) into zero-padded strings
-   * Useful for batch processing of array indices
-   *
-   * @param indices - Array of indices to format
-   * @param padLength - The desired length of the resulting strings (default: 2)
-   * @returns Array of zero-padded string representations
-   */
-  static formatIndicesArray(
-    indices: number[],
-    padLength: number = 2,
-  ): string[] {
-    return indices.map((index) =>
-      this.formatIndexToDisplayNumber(index, padLength),
-    );
-  }
 }

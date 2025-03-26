@@ -53,7 +53,7 @@ export interface StarRatingProps {
   /**
    * Whether to show numeric representation alongside stars
    * When true, numeric rating (e.g., "4.5/5") will be visible on all screen sizes
-   * When false, numeric rating will only be visible on extra small screens (xs)
+   * When false, numeric rating will only be visible on tiny screens (xs)
    * and stars will be visible on small screens (sm) and above
    * @default false
    */
