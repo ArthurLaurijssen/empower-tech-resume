@@ -32,7 +32,6 @@ A dynamic, single-page resume website built with Next.js and TypeScript that aut
 
 - Node.js (LTS version recommended)
 - npm or yarn
-- Docker (for production deployment)
 
 ### Environment Variables
 
