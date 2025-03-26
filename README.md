@@ -185,4 +185,4 @@ The application follows a modular architecture with:
 
 ## License
 
-[MIT](LICENSE)
+NON-COMMERCIAL USE LICENSE
