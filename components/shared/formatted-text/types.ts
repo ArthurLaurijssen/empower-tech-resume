@@ -1,9 +1,7 @@
+// src/components/shared/formatted-text/types.ts (or wherever it's defined)
 import React from "react";
 
-/**
- * Defines the HTML element types that FormattedText can render as
- * Provides type safety for the semantic element selection
- */
+// TextElement remains the same
 export type TextElement =
   | "p"
   | "span"
@@ -20,34 +18,30 @@ export type TextElement =
   | "label";
 
 /**
- * Props for the FormattedText component
- * Extends HTML attributes to support all standard element properties
+ * Props for the FormattedText component using a more generic base type.
  */
 export interface FormattedTextProps
-  extends React.ComponentPropsWithoutRef<"div"> {
+  // Extend from common HTML attributes, omitting 'children'
+  extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
   /**
    * The text to format, potentially containing **bold** markers
-   * Example: "Hello **world**" would display "Hello" as plain text and "world" as bold
    */
   text: string;
 
   /**
    * Optional class name to apply to the container element
-   * These classes will be applied to the main rendered element (p, span, etc.)
    */
   className?: string;
 
   /**
    * Optional class name to apply to bold text segments
-   * These classes will be applied to the <strong> elements for bold text
    * @default "text-black font-semibold"
    */
   boldClassName?: string;
 
   /**
    * HTML element type to render as
-   * Allows the component to adapt to different semantic contexts
    * @default "span"
    */
-  as?: TextElement;
+  as?: TextElement; // Type remains TextElement, but props don't dynamically check against it
 }
