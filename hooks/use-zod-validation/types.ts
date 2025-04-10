@@ -13,7 +13,6 @@ export interface UseZodValidationReturn<T> {
   /**
    * Function to validate data against the schema
    * @param data - The data to validate
-   * @returns boolean indicating if validation passed
    */
   validateData: (data: T) => boolean;
 }
