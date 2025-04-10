@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import React from "react";
 import { Experience } from "@/models/entities/Experience";
 import { ExperienceType } from "@/models/enums/ExperienceType";
 
@@ -7,7 +7,7 @@ import { ExperienceType } from "@/models/enums/ExperienceType";
  * Extends HTML div element attributes while excluding the children prop
  */
 export interface ExperienceFiltersProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "children"> {
   /**
    * List of all experiences to extract filter types from
    */

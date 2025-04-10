@@ -6,7 +6,7 @@ import { ZodIssue } from "zod";
  * Extends HTMLDivElement attributes for proper typing of div props
  */
 export interface FormFeedbackProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * Success message to display
    */

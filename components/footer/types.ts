@@ -7,7 +7,7 @@ import React from "react";
  * Explicitly does not accept children props
  */
 export interface FooterProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"footer">, "children"> {
   /**
    * Developer entity containing information needed for the footer
    * Used for displaying name in copyright and social media links

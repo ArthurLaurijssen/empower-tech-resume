@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Available gradient styles for the GradientEffect component
@@ -13,7 +13,8 @@ export type GradientIntent = "yellow";
  * Props interface for the GradientEffect component
  * Extends HTML div element attributes
  */
-export interface GradientEffectProps extends HTMLAttributes<HTMLDivElement> {
+export interface GradientEffectProps
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * Visual style of gradient to apply
    * Controls colors and direction of the gradient

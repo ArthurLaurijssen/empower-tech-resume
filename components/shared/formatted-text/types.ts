@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Defines the HTML element types that FormattedText can render as
@@ -23,7 +23,8 @@ export type TextElement =
  * Props for the FormattedText component
  * Extends HTML attributes to support all standard element properties
  */
-export interface FormattedTextProps extends HTMLAttributes<HTMLElement> {
+export interface FormattedTextProps
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * The text to format, potentially containing **bold** markers
    * Example: "Hello **world**" would display "Hello" as plain text and "world" as bold

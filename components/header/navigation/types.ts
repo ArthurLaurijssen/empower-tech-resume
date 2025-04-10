@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Props for a navigation item component
@@ -12,7 +12,10 @@ export interface NavigationItemProps {
  * Props for the Navigation component
  * Extends HTML nav element attributes but with custom children handling
  */
-export type NavigationProps = Omit<HTMLAttributes<HTMLElement>, "children">;
+export type NavigationProps = Omit<
+  React.ComponentPropsWithoutRef<"nav">,
+  "children"
+>;
 
 /**
  * Represents a single navigation link

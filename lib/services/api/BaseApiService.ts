@@ -34,7 +34,7 @@ export abstract class BaseApiService {
         ...options.headers,
       },
       // Use a reasonable revalidation period instead of no-store
-      next: { revalidate: 3600 }, // Revalidate every hour (3600 seconds)
+      next: { revalidate: 1 }, // Revalidate every hour (3600 seconds)
     };
 
     try {

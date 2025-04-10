@@ -9,10 +9,9 @@ import React from "react";
  * and explicitly does not accept children props.
  *
  * @interface MissionProps
- * @extends {Omit<React.HTMLAttributes<HTMLElement>, "children">}
  */
 export interface MissionProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "children"> {
   /**
    * The mission data object that contains title and description
    * @type {Mission}

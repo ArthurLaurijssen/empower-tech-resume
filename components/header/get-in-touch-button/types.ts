@@ -1,11 +1,11 @@
-import { ButtonHTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Props interface for the HeaderGetInTouchButton component
  * Extends standard button HTML attributes
  */
 export interface HeaderGetInTouchButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ComponentPropsWithoutRef<"button"> {
   /**
    * Optional CSS class name for custom styling
    */

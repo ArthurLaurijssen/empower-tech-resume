@@ -1,5 +1,5 @@
 import { DeveloperSkill } from "@/models/entities/DeveloperSkill";
-import { HTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Props interface for the DeveloperSkillContainer component
@@ -7,7 +7,7 @@ import { HTMLAttributes } from "react";
  * as children are generated internally and onClick is used for toggling expansion
  */
 export interface DeveloperSkillContainerProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "onClick"> {
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "children" | "onClick"> {
   /**
    * Developer skill data object containing technology name, proficiency level, and projects
    */

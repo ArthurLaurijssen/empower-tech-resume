@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactElement } from "react";
+import React, { ReactElement } from "react";
 
 /**
  * Mode for the Swiper component
@@ -11,7 +11,7 @@ export type SwiperMode = "fixed" | "auto";
  * Props for the Swiper component
  */
 export interface SwiperProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "children"> {
   /**
    * Width of each slide in pixels
    * Required for 'fixed' mode, ignored in 'auto' mode

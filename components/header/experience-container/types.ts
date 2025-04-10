@@ -1,11 +1,12 @@
-import { HTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Props interface for the ExperienceContainer component
- * Extends standard HTML div element attributes with experience-specific data
+ * Inherits all the normal <div> props except ref
+ * and adds our custom experience fields.
  */
 export interface ExperienceContainerProps
-  extends HTMLAttributes<HTMLDivElement> {
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * The start date of the experience in string format
    * Used to calculate years of experience

@@ -1,4 +1,4 @@
-import { ReactNode, HTMLAttributes } from "react";
+import React, { ReactNode } from "react";
 
 /**
  * Available visual styles for the CircleEffect component
@@ -33,7 +33,8 @@ export type CircleEffectSize = "sm" | "md" | "lg" | "auto" | "custom";
  * Props interface for the CircleEffect component
  * Extends HTML div element attributes
  */
-export interface CircleEffectProps extends HTMLAttributes<HTMLDivElement> {
+export interface CircleEffectProps
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * Content to display inside the circle
    * Typically an icon or small text element

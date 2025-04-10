@@ -1,10 +1,11 @@
-import { HTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Props interface for the BackgroundContainer component
  * Extends HTML element attributes to support various semantic elements
  */
-export interface BackgroundContainerProps extends HTMLAttributes<HTMLElement> {
+export interface BackgroundContainerProps
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * Visual style to apply to the container
    * Controls background color and appearance

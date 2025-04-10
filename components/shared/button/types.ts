@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 /**
  * Available visual styles for buttons
@@ -26,7 +26,7 @@ export type ButtonSize = "sm" | "md" | "lg" | "xl" | "xxl" | "custom";
  * Props interface for the Button component
  * Extends HTML button element attributes
  */
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   /**
    * Visual style to apply to the button
    * @default "primary"

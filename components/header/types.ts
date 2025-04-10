@@ -7,7 +7,7 @@ import { Developer } from "@/models/entities/Developer";
  * Explicitly does not accept children props
  */
 export interface HeaderProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"header">, "children"> {
   /**
    * Developer entity containing all profile information
    * Includes personal details, experience dates, greeting, and image URL

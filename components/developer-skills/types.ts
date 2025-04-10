@@ -7,6 +7,6 @@ import React from "react";
  * Explicitly does not accept children props
  */
 export interface DeveloperSkillsContainerProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"div">, "children"> {
   developerSkills: DeveloperSkill[];
 }

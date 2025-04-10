@@ -1,12 +1,12 @@
 import { ExperienceType } from "@/models/enums/ExperienceType";
-import { ButtonHTMLAttributes } from "react";
+import React from "react";
 
 /**
  * Props for the ExperienceFilterItem component
  * Extends HTML button element props while excluding children prop
  */
 export interface ExperienceFilterItemProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
+  extends Omit<React.ComponentPropsWithoutRef<"button">, "children"> {
   /**
    * The type of experience this filter represents (Work, Education, etc.)
    */

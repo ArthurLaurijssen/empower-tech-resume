@@ -5,7 +5,7 @@ import React from "react";
  * Extends HTML form element attributes for proper typing
  */
 export interface ContactFormProps
-  extends React.FormHTMLAttributes<HTMLFormElement> {
+  extends React.ComponentPropsWithoutRef<"form"> {
   /**
    * Optional callback function to execute after successful form submission
    */
