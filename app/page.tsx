@@ -12,6 +12,7 @@ import BreakpointIndicator from "@/components/shared/break-point-indicator/Break
  * This is a Next.js Server Component that fetches developer data and renders
  * the complete portfolio page with all its sections in a structured layout.
  *
+ *
  * The component is structured as follows:
  * - Header: Developer introduction and navigation
  * - Main content:
