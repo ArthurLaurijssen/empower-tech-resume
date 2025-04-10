@@ -22,7 +22,7 @@ RUN apk add --no-cache vips-dev
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
-# Copy Sharp module specifically
+# Copy Sharp module specifically.
 COPY --from=builder /app/node_modules/sharp ./node_modules/sharp
 
 EXPOSE 3000
